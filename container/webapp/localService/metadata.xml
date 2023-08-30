@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZZ1_TRAINPLANNINGREPORT_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="P_Scbo_UserType" sap:label="User" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="name"/>
+                </Key>
+                <Property Name="name" Type="Edm.String" Nullable="false" MaxLength="12" sap:display-format="UpperCase" sap:label="User" sap:quickinfo="User Name in User Master Record"/>
+                <Property Name="description" Type="Edm.String" MaxLength="80" sap:label="Description" sap:quickinfo="Description of the Technical User Account"/>
+            </EntityType>
+            <EntityType Name="ZZ1_TRAINPLANNINGREPORTType" sap:label="Train Planning Report" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="SAP_UUID"/>
+                </Key>
+                <Property Name="Action001_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Action002_ac" Type="Edm.Boolean" sap:label="Dyn. Action Control" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="SAP_UUID" Type="Edm.Guid" Nullable="false" sap:label="UUID" sap:quickinfo="16 Byte UUID in 16 Bytes (Raw Format)"/>
+                <Property Name="ID" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:label="ID"/>
+                <Property Name="SAP_Description" Type="Edm.String" MaxLength="80" sap:label="Description"/>
+                <Property Name="SAP_CreatedDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Created On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_CreatedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="SAP_CreatedByUser_Text" sap:label="Created By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_CreatedByUser_Text" Type="Edm.String" MaxLength="80" sap:label="Description" sap:quickinfo="Description of the Technical User Account" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_LastChangedDateTime" Type="Edm.DateTimeOffset" Precision="7" sap:label="Last Changed On" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_LastChangedByUser" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:text="SAP_LastChangedByUser_Text" sap:label="Last Changed By" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="SAP_LastChangedByUser_Text" Type="Edm.String" MaxLength="80" sap:label="Description" sap:quickinfo="Description of the Technical User Account" sap:creatable="false" sap:updatable="false"/>
+                <Property Name="BSMNumber" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:label="BSM Number" sap:quickinfo="BSM"/>
+                <Property Name="SalesOrder" Type="Edm.String" MaxLength="20" sap:label="Sales Order" sap:quickinfo="SalesOrder"/>
+                <Property Name="WagonNumber" Type="Edm.String" MaxLength="20" sap:label="Wagon Number" sap:quickinfo="WagonNumber"/>
+                <Property Name="ContainerLoadPad" Type="Edm.String" MaxLength="20" sap:label="Container Load Pad"/>
+                <Property Name="ContainerNumber" Type="Edm.String" MaxLength="20" sap:label="Container Number" sap:quickinfo="ContainerNumber"/>
+                <Property Name="SealNumber" Type="Edm.String" MaxLength="20" sap:label="Seal Number" sap:quickinfo="SealNumber"/>
+                <Property Name="Carrier" Type="Edm.String" MaxLength="500" sap:label="Carrier"/>
+                <Property Name="NetWeight" Type="Edm.Decimal" Precision="10" Scale="2" sap:label="Net Weight" sap:quickinfo="NetWeight"/>
+                <Property Name="WagonNet" Type="Edm.Decimal" Precision="10" Scale="2" sap:label="Wagon Net"/>
+                <Property Name="GrossWeight" Type="Edm.Decimal" Precision="10" Scale="2" sap:label="Gross Weight"/>
+                <Property Name="Buyer" Type="Edm.String" MaxLength="100" sap:label="Buyer"/>
+                <Property Name="ActualPackingDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Actual Packing Date" sap:quickinfo="ActualPackingDate"/>
+                <Property Name="Stevedorecode" Type="Edm.String" MaxLength="20" sap:label="Stevedorecode"/>
+                <Property Name="Stevedore" Type="Edm.String" MaxLength="100" sap:label="Stevedore"/>
+                <Property Name="PRAStatus" Type="Edm.String" MaxLength="20" sap:label="PRA Status" sap:quickinfo="PRAStatus"/>
+                <Property Name="Location" Type="Edm.String" MaxLength="20" sap:label="Location"/>
+                <Property Name="DestLocation" Type="Edm.String" MaxLength="20" sap:label="Destination Location"/>
+                <Property Name="Slot" Type="Edm.String" MaxLength="20" sap:label="Slot"/>
+                <Property Name="Status" Type="Edm.String" MaxLength="20" sap:label="Status"/>
+                <Property Name="LoadingPoint" Type="Edm.String" MaxLength="20" sap:label="Loading Point"/>
+                <Property Name="LoadingDate" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Loading Date"/>
+                <Property Name="TrainID" Type="Edm.String" MaxLength="10" sap:display-format="NonNegative" sap:label="Train ID"/>
+                <Property Name="CheckPost" Type="Edm.String" MaxLength="250" sap:label="Check"/>
+                <Property Name="ExcludedFlag" Type="Edm.String" MaxLength="1" sap:display-format="NonNegative" sap:label="Excluded"/>
+                <Property Name="VesselNumber" Type="Edm.String" MaxLength="30" sap:label="Vessel Number"/>
+                <Property Name="Voyage" Type="Edm.String" MaxLength="20" sap:label="Voyage"/>
+                <Property Name="PortOfDischargeCode" Type="Edm.String" MaxLength="20" sap:label="PortOfDischargeCode" sap:quickinfo="PortOfDischangeCode"/>
+                <Property Name="PortOfDischargeName" Type="Edm.String" MaxLength="35" sap:label="PortOfDischargeName"/>
+                <NavigationProperty Name="to_SAPSysAdminDataChangeUser" Relationship="ZZ1_TRAINPLANNINGREPORT_CDS.assoc_5F358F8700803CC5A9C0873CCE1C5E1A" FromRole="FromRole_assoc_5F358F8700803CC5A9C0873CCE1C5E1A" ToRole="ToRole_assoc_5F358F8700803CC5A9C0873CCE1C5E1A"/>
+                <NavigationProperty Name="to_SAPSysAdminDataCreateUser" Relationship="ZZ1_TRAINPLANNINGREPORT_CDS.assoc_E476074E38E91CF72616FF3EFC41E971" FromRole="FromRole_assoc_E476074E38E91CF72616FF3EFC41E971" ToRole="ToRole_assoc_E476074E38E91CF72616FF3EFC41E971"/>
+            </EntityType>
+            <Association Name="assoc_E476074E38E91CF72616FF3EFC41E971" sap:content-version="1">
+                <End Type="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType" Multiplicity="1" Role="FromRole_assoc_E476074E38E91CF72616FF3EFC41E971"/>
+                <End Type="ZZ1_TRAINPLANNINGREPORT_CDS.P_Scbo_UserType" Multiplicity="0..1" Role="ToRole_assoc_E476074E38E91CF72616FF3EFC41E971"/>
+            </Association>
+            <Association Name="assoc_5F358F8700803CC5A9C0873CCE1C5E1A" sap:content-version="1">
+                <End Type="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType" Multiplicity="1" Role="FromRole_assoc_5F358F8700803CC5A9C0873CCE1C5E1A"/>
+                <End Type="ZZ1_TRAINPLANNINGREPORT_CDS.P_Scbo_UserType" Multiplicity="0..1" Role="ToRole_assoc_5F358F8700803CC5A9C0873CCE1C5E1A"/>
+            </Association>
+            <EntityContainer Name="ZZ1_TRAINPLANNINGREPORT_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="P_Scbo_User" EntityType="ZZ1_TRAINPLANNINGREPORT_CDS.P_Scbo_UserType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:addressable="false" sap:content-version="1"/>
+                <EntitySet Name="ZZ1_TRAINPLANNINGREPORT" EntityType="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType" sap:searchable="true" sap:content-version="1"/>
+                <AssociationSet Name="assoc_5F358F8700803CC5A9C0873CCE1C5E1A" Association="ZZ1_TRAINPLANNINGREPORT_CDS.assoc_5F358F8700803CC5A9C0873CCE1C5E1A" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZZ1_TRAINPLANNINGREPORT" Role="FromRole_assoc_5F358F8700803CC5A9C0873CCE1C5E1A"/>
+                    <End EntitySet="P_Scbo_User" Role="ToRole_assoc_5F358F8700803CC5A9C0873CCE1C5E1A"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_E476074E38E91CF72616FF3EFC41E971" Association="ZZ1_TRAINPLANNINGREPORT_CDS.assoc_E476074E38E91CF72616FF3EFC41E971" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZZ1_TRAINPLANNINGREPORT" Role="FromRole_assoc_E476074E38E91CF72616FF3EFC41E971"/>
+                    <End EntitySet="P_Scbo_User" Role="ToRole_assoc_E476074E38E91CF72616FF3EFC41E971"/>
+                </AssociationSet>
+                <FunctionImport Name="ZZ1_TRAINPLANNINGREPORTAction001" ReturnType="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType" EntitySet="ZZ1_TRAINPLANNINGREPORT" m:HttpMethod="POST" sap:action-for="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType" sap:applicable-path="Action001_ac">
+                    <Parameter Name="SAP_UUID" Type="Edm.Guid" Mode="In" sap:label="UUID"/>
+                </FunctionImport>
+                <FunctionImport Name="ZZ1_TRAINPLANNINGREPORTAction002" ReturnType="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType" EntitySet="ZZ1_TRAINPLANNINGREPORT" m:HttpMethod="POST" sap:action-for="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType" sap:applicable-path="Action002_ac">
+                    <Parameter Name="SAP_UUID" Type="Edm.Guid" Mode="In" sap:label="UUID"/>
+                </FunctionImport>
+                <FunctionImport Name="ZZ1_TRAINPLANNINGREPORTSap_upsert" ReturnType="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType" EntitySet="ZZ1_TRAINPLANNINGREPORT" m:HttpMethod="POST">
+                    <Parameter Name="ID" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Numeric length 10"/>
+                    <Parameter Name="SAP_Description" Type="Edm.String" Mode="In" MaxLength="80" sap:label="Text of length 80"/>
+                    <Parameter Name="BSMNumber" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Numeric length 10"/>
+                    <Parameter Name="SalesOrder" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="WagonNumber" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="ContainerLoadPad" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="ContainerNumber" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="SealNumber" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="Carrier" Type="Edm.String" Mode="In" MaxLength="500" sap:label="Text of length 500"/>
+                    <Parameter Name="NetWeight" Type="Edm.Decimal" Mode="In" Precision="10" Scale="2" sap:label="Net Weight"/>
+                    <Parameter Name="WagonNet" Type="Edm.Decimal" Mode="In" Precision="10" Scale="2" sap:label="Wagon Net"/>
+                    <Parameter Name="GrossWeight" Type="Edm.Decimal" Mode="In" Precision="10" Scale="2" sap:label="Gross Weight"/>
+                    <Parameter Name="Buyer" Type="Edm.String" Mode="In" MaxLength="100" sap:label="Text of length 100"/>
+                    <Parameter Name="ActualPackingDate" Type="Edm.DateTime" Mode="In" Precision="0" sap:label="Actual Packing Date" sap:display-format="Date"/>
+                    <Parameter Name="Stevedorecode" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="Stevedore" Type="Edm.String" Mode="In" MaxLength="100" sap:label="Text of length 100"/>
+                    <Parameter Name="PRAStatus" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="Location" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="DestLocation" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="Slot" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="Status" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="LoadingPoint" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="LoadingDate" Type="Edm.DateTime" Mode="In" Precision="0" sap:label="Loading Date" sap:display-format="Date"/>
+                    <Parameter Name="TrainID" Type="Edm.String" Mode="In" MaxLength="10" sap:label="Numeric length 10"/>
+                    <Parameter Name="CheckPost" Type="Edm.String" Mode="In" MaxLength="250" sap:label="Text of length 250"/>
+                    <Parameter Name="ExcludedFlag" Type="Edm.String" Mode="In" MaxLength="1" sap:label="Numeric length 1"/>
+                    <Parameter Name="VesselNumber" Type="Edm.String" Mode="In" MaxLength="30" sap:label="Text of length 30"/>
+                    <Parameter Name="Voyage" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="PortOfDischargeCode" Type="Edm.String" Mode="In" MaxLength="20" sap:label="Text of length 20"/>
+                    <Parameter Name="PortOfDischargeName" Type="Edm.String" Mode="In" MaxLength="35" sap:label="Text of length 35"/>
+                </FunctionImport>
+            </EntityContainer>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORT_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType/ID" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.FieldControl" EnumMember="Common.FieldControlType/Mandatory"/>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORT_CDS_Entities/ZZ1_TRAINPLANNINGREPORT" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonFilterableProperties">
+                            <Collection>
+                                <PropertyPath>Action001_ac</PropertyPath>
+                                <PropertyPath>Action002_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_SAPSysAdminDataChangeUser"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="to_SAPSysAdminDataCreateUser"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="false"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Capabilities.SortRestrictions">
+                    <Record>
+                        <PropertyValue Property="NonSortableProperties">
+                            <Collection>
+                                <PropertyPath>Action001_ac</PropertyPath>
+                                <PropertyPath>Action002_ac</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>ID</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://vhhhlds4ci.sap.manildra.com.au:44300/sap/opu/odata/sap/ZZ1_TRAINPLANNINGREPORT_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://vhhhlds4ci.sap.manildra.com.au:44300/sap/opu/odata/sap/ZZ1_TRAINPLANNINGREPORT_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

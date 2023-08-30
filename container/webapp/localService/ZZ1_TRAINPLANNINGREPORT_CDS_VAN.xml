@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="HTML5"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="../../../sap/zz1_trainplanningreport_cds/$metadata">
+        <edmx:Include Namespace="ZZ1_TRAINPLANNINGREPORT_CDS" Alias="SAP"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="zz1_trainplanningreport_cds_van.v1" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType/SAP_UUID">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType/_SAPSysAdminDataChangeUser">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType/_SAPSysAdminDataCreateUser">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType/Action001_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType/Action002_ac">
+                <Annotation Term="UI.Hidden"/>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType/Carrier">
+                <Annotation Term="UI.MultiLineText"/>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType/SAP_CreatedByUser">
+                <Annotation Term="Common.Text" Path="SAP_CreatedByUser_Text">
+                    <Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType/SAP_LastChangedByUser">
+                <Annotation Term="Common.Text" Path="SAP_LastChangedByUser_Text">
+                    <Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextOnly"/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORTType">
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="Label" String="Train Planning Report"/>
+                            <PropertyValue Property="ID" String="TRAINPLANNINGREPORT"/>
+                            <PropertyValue Property="Facets">
+                                <Collection>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="General Information"/>
+                                        <PropertyValue Property="ID" String="TRAINPLANNINGREPORTGeneralInformation"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneralInformation"/>
+                                    </Record>
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Label" String="System Administrative Data"/>
+                                        <PropertyValue Property="ID" String="TRAINPLANNINGREPORTSystemAdministrativeData"/>
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#SystemAdministrativeData"/>
+                                    </Record>
+                                </Collection>
+                            </PropertyValue>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="GeneralInformation">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="ID"/>
+                                    <PropertyValue Property="Value" Path="ID"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Description"/>
+                                    <PropertyValue Property="Value" Path="SAP_Description"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="BSM Number"/>
+                                    <PropertyValue Property="Value" Path="BSMNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Sales Order"/>
+                                    <PropertyValue Property="Value" Path="SalesOrder"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Wagon Number"/>
+                                    <PropertyValue Property="Value" Path="WagonNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Container Load Pad"/>
+                                    <PropertyValue Property="Value" Path="ContainerLoadPad"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Container Number"/>
+                                    <PropertyValue Property="Value" Path="ContainerNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Seal Number"/>
+                                    <PropertyValue Property="Value" Path="SealNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Carrier"/>
+                                    <PropertyValue Property="Value" Path="Carrier"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Net Weight"/>
+                                    <PropertyValue Property="Value" Path="NetWeight"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Wagon Net"/>
+                                    <PropertyValue Property="Value" Path="WagonNet"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Gross Weight"/>
+                                    <PropertyValue Property="Value" Path="GrossWeight"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Buyer"/>
+                                    <PropertyValue Property="Value" Path="Buyer"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Actual Packing Date"/>
+                                    <PropertyValue Property="Value" Path="ActualPackingDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Stevedorecode"/>
+                                    <PropertyValue Property="Value" Path="Stevedorecode"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Stevedore"/>
+                                    <PropertyValue Property="Value" Path="Stevedore"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="PRA Status"/>
+                                    <PropertyValue Property="Value" Path="PRAStatus"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Location"/>
+                                    <PropertyValue Property="Value" Path="Location"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Destination Location"/>
+                                    <PropertyValue Property="Value" Path="DestLocation"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Slot"/>
+                                    <PropertyValue Property="Value" Path="Slot"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Status"/>
+                                    <PropertyValue Property="Value" Path="Status"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Loading Point"/>
+                                    <PropertyValue Property="Value" Path="LoadingPoint"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Loading Date"/>
+                                    <PropertyValue Property="Value" Path="LoadingDate"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Train ID"/>
+                                    <PropertyValue Property="Value" Path="TrainID"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Check"/>
+                                    <PropertyValue Property="Value" Path="CheckPost"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Excluded"/>
+                                    <PropertyValue Property="Value" Path="ExcludedFlag"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Vessel Number"/>
+                                    <PropertyValue Property="Value" Path="VesselNumber"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Voyage"/>
+                                    <PropertyValue Property="Value" Path="Voyage"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="PortOfDischargeCode"/>
+                                    <PropertyValue Property="Value" Path="PortOfDischargeCode"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="PortOfDischargeName"/>
+                                    <PropertyValue Property="Value" Path="PortOfDischargeName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="SystemAdministrativeData">
+                    <Record>
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Created On"/>
+                                    <PropertyValue Property="Value" Path="SAP_CreatedDateTime"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Created By"/>
+                                    <PropertyValue Property="Value" Path="SAP_CreatedByUser"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Last Changed On"/>
+                                    <PropertyValue Property="Value" Path="SAP_LastChangedDateTime"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="Last Changed By"/>
+                                    <PropertyValue Property="Value" Path="SAP_LastChangedByUser"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderInfo">
+                    <Record>
+                        <PropertyValue Property="TypeName" String="Train Planning Report"/>
+                        <PropertyValue Property="TypeNamePlural" String="Train Planning Reports"/>
+                        <PropertyValue Property="Title">
+                            <Record Type="UI.DataField">
+                                <PropertyValue Property="Value" Path="ID"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Identification">
+                    <Collection>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="New Action"/>
+                            <PropertyValue Property="Action" String="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORT_CDS_Entities/ZZ1_TRAINPLANNINGREPORTAction001"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="New Action"/>
+                            <PropertyValue Property="Action" String="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORT_CDS_Entities/ZZ1_TRAINPLANNINGREPORTAction002"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="ID"/>
+                            <PropertyValue Property="Value" Path="ID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="BSM Number"/>
+                            <PropertyValue Property="Value" Path="BSMNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Sales Order"/>
+                            <PropertyValue Property="Value" Path="SalesOrder"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Wagon Number"/>
+                            <PropertyValue Property="Value" Path="WagonNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Container Load Pad"/>
+                            <PropertyValue Property="Value" Path="ContainerLoadPad"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Container Number"/>
+                            <PropertyValue Property="Value" Path="ContainerNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Seal Number"/>
+                            <PropertyValue Property="Value" Path="SealNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Carrier"/>
+                            <PropertyValue Property="Value" Path="Carrier"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Net Weight"/>
+                            <PropertyValue Property="Value" Path="NetWeight"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Wagon Net"/>
+                            <PropertyValue Property="Value" Path="WagonNet"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Gross Weight"/>
+                            <PropertyValue Property="Value" Path="GrossWeight"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Buyer"/>
+                            <PropertyValue Property="Value" Path="Buyer"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Actual Packing Date"/>
+                            <PropertyValue Property="Value" Path="ActualPackingDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stevedorecode"/>
+                            <PropertyValue Property="Value" Path="Stevedorecode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Stevedore"/>
+                            <PropertyValue Property="Value" Path="Stevedore"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PRA Status"/>
+                            <PropertyValue Property="Value" Path="PRAStatus"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Location"/>
+                            <PropertyValue Property="Value" Path="Location"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Destination Location"/>
+                            <PropertyValue Property="Value" Path="DestLocation"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Slot"/>
+                            <PropertyValue Property="Value" Path="Slot"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Status"/>
+                            <PropertyValue Property="Value" Path="Status"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Loading Point"/>
+                            <PropertyValue Property="Value" Path="LoadingPoint"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Loading Date"/>
+                            <PropertyValue Property="Value" Path="LoadingDate"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Train ID"/>
+                            <PropertyValue Property="Value" Path="TrainID"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Check"/>
+                            <PropertyValue Property="Value" Path="CheckPost"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Excluded"/>
+                            <PropertyValue Property="Value" Path="ExcludedFlag"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Vessel Number"/>
+                            <PropertyValue Property="Value" Path="VesselNumber"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Voyage"/>
+                            <PropertyValue Property="Value" Path="Voyage"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PortOfDischargeCode"/>
+                            <PropertyValue Property="Value" Path="PortOfDischargeCode"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="PortOfDischargeName"/>
+                            <PropertyValue Property="Value" Path="PortOfDischargeName"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="New Action"/>
+                            <PropertyValue Property="Action" String="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORT_CDS_Entities/ZZ1_TRAINPLANNINGREPORTAction002"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataFieldForAction">
+                            <PropertyValue Property="Label" String="New Action"/>
+                            <PropertyValue Property="Action" String="ZZ1_TRAINPLANNINGREPORT_CDS.ZZ1_TRAINPLANNINGREPORT_CDS_Entities/ZZ1_TRAINPLANNINGREPORTAction001"/>
+                            <PropertyValue Property="InvocationGrouping" EnumMember="UI.OperationGroupingType/Isolated"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Description"/>
+                            <PropertyValue Property="Value" Path="SAP_Description"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Created On"/>
+                            <PropertyValue Property="Value" Path="SAP_CreatedDateTime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Created By"/>
+                            <PropertyValue Property="Value" Path="SAP_CreatedByUser"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Last Changed On"/>
+                            <PropertyValue Property="Value" Path="SAP_LastChangedDateTime"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Label" String="Last Changed By"/>
+                            <PropertyValue Property="Value" Path="SAP_LastChangedByUser"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
